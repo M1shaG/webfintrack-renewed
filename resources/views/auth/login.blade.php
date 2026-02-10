@@ -3,12 +3,12 @@
     @csrf
         <h1>Login</h1>
 
-        <label for="name">Name:</label>
+        <label for="email">Email:</label>
         <input 
-            type="text"
-            name="name"
+            type="email"
+            name="email"
             required
-            value="{{  old('name') }}"
+            value="{{  old('email') }}"
         >
 
         <label for="password">Password:</label>
@@ -19,5 +19,16 @@
         >
 
         <button type="submit" class="btn mt-4">Login</button>
+
+        
     </form>
+
+        @if($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
 </div>
