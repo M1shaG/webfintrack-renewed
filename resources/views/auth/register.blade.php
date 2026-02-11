@@ -13,7 +13,6 @@
             value="{{  old('name') }}"
         >
 
-
         <label for="email">Email:</label>
         <input 
             type="text"
@@ -21,7 +20,6 @@
             required
             value="{{  old('email') }}"
         >
-
 
         <label for="password">Password:</label>
         <input 
@@ -37,6 +35,14 @@
             required
         >
 
+        <label for="money">Initial Balance:</label>
+        <input 
+            type="number"
+            name="balance"
+            step="0.01"
+            min="0"
+            required
+        >
 
         <button type="submit" class="btn mt-4">Registration</button>
     </form>

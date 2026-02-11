@@ -7,7 +7,13 @@
     <title>Profile</title>
 </head>
 <body>
-    <h1>{{Auth::user()->name}}</h1>
+
+    <form action="{{ route('logout') }}" method="POST">
+         @csrf
+        <button type="submit">logout</button>
+    </form>
+
+    <h1>{{Auth::user()->name}} {{$userBalance / 100}}</h1>
  <form action="{{ route('finance') }}" method="POST">
         @csrf
 
@@ -40,5 +46,9 @@
             @endforeach
         </ul>
     @endif
+
+    @foreach ($lol->all() as $l)
+        <li>{{ $l['finance'] }}, {{ $l['description']}}</li>
+    @endforeach
 </body>
 </html>
