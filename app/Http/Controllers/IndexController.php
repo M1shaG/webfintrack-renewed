@@ -11,7 +11,7 @@ class IndexController extends Controller
 {
     function showIndex() {
         if(Auth::check()) {
-            return redirect()->route('profile');
+            return redirect()->route('show.profile');
         }
         return view('index');
     }
@@ -21,18 +21,20 @@ class IndexController extends Controller
         $totalFinances = $user->finances()->sum('finance');
         $userBalance = Auth::user()->balance;
         
-        $userBalance = $userBalance - $totalFinances;
+        $userBalance = $userBalance + $totalFinances;
 
-        $lol = $user->finances->map(function($item) {
+        $history = $user->finances->map(function($item) {
             return [
+                'id' => $item->id,
                 'finance' => $item->finance,
                 'description' => $item->description,
+                'date' => $item->created_at
             ];
         });
 
     
         return view('user.profile')->with([
-            'lol' => $lol,
+            'history' => $history,
             'userBalance' => $userBalance,
         ]);
     }
@@ -50,6 +52,13 @@ class IndexController extends Controller
         }
         
         Finances::create(['user_id' => Auth::user()->id, 'finance' => $valid_data['money'], 'description' => $valid_data['description']]);
-        return view('user.profile');
+        return redirect()->route('show.profile');
+    }
+
+    function delete(string $id) {
+        $user = Auth::user();
+        $finance = $user->finances()->findOrFail($id);
+        Finances::destroy($id); 
+        return redirect()->route('show.profile');
     }
 }

@@ -14,7 +14,7 @@ class AuthController extends Controller
     public function showRegistration()
     {
         if(Auth::check()) {
-            return redirect()->route('profile');
+            return redirect()->route('show.profile');
         }
         return view('auth.register');
     }
@@ -22,7 +22,7 @@ class AuthController extends Controller
     public function showLogin()
     {
         if(Auth::check()) {
-            return redirect()->route('profile');
+            return redirect()->route('show.profile');
         }
         return view('auth.login');
     }
@@ -41,7 +41,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('profile');
+        return redirect()->route('show.profile');
     }
 
     public function login(Request $request)
@@ -54,7 +54,7 @@ class AuthController extends Controller
         if(Auth::attempt($valid_data)) {
             $request->session()->regenerate();
 
-            return redirect()->route('profile');
+            return redirect()->route('show.profile');
         }
 
         throw ValidationException::withMessages([
