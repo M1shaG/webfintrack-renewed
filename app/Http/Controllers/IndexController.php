@@ -41,7 +41,7 @@ class IndexController extends Controller
 
     function add(Request $request) {
         $valid_data = $request->validate([
-            'money' => 'required|numeric|min:-2147483648|max:2147483647',
+            'money' => 'required|numeric|min:-21474836|max:21474836',
             'description' => 'nullable|string|max:1000',
             'choice' => 'required|in:+,-' 
         ]);
@@ -50,7 +50,7 @@ class IndexController extends Controller
         if($valid_data['choice'] == "-") {
             $valid_data['money'] *= -1;
         }
-        
+
         Finances::create(['user_id' => Auth::user()->id, 'finance' => $valid_data['money'], 'description' => $valid_data['description']]);
         return redirect()->route('show.profile');
     }
