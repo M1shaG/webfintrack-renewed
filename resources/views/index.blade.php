@@ -13,7 +13,7 @@
 {{-- Header --}}
 <body class="min-h-screen flex flex-col">
     <header>
-        <nav class="bg-slate-950 border-gray-200 px-4 lg:px-6 py-2.5">
+        <nav class="bg-slate-900 border-gray-200 px-4 lg:px-6 py-2.5">
             <div class="container flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <a href="#" class="flex items-center gap-3">
                     <img src="{{ asset('favicon.svg') }}" class="invert h-6 sm:h-9 block " alt="Flowbite Logo" />

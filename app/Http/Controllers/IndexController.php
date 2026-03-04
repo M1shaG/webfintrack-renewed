@@ -7,6 +7,8 @@ use App\Models\Finances;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Pagination\CursorPaginator;
+
 class IndexController extends Controller
 {
     function showIndex() {
@@ -23,16 +25,17 @@ class IndexController extends Controller
         
         $userBalance = $userBalance + $totalFinances;
 
-        $history = $user->finances->map(function($item) {
-            return [
-                'id' => $item->id,
-                'finance' => $item->finance,
-                'description' => $item->description,
-                'date' => $item->created_at
-            ];
-        });
+        $history = $user->finances()
+            ->cursorPaginate(10)
+            ->through(function($item) {
+                return [
+                    'id' => $item->id,
+                    'finance' => $item->finance,
+                    'description' => $item->description,
+                    'date' => $item->created_at
+                ];
+            });
 
-    
         return view('user.profile')->with([
             'history' => $history,
             'userBalance' => $userBalance,

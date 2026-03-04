@@ -1,0 +1,46 @@
+[authlib-injector] [INFO] Logging file: /home/mishag/Downloads/UltimMC-Launcher-Linux64/UltimMC/instances/1.20.11/.minecraft/authlib-injector.log
+[authlib-injector] [INFO] Version: 1.2.7
+[authlib-injector] [INFO] Authentication server: http://127.0.0.1:34337
+[authlib-injector] [WARNING] You are using HTTP protocol, which is INSECURE! Please switch to HTTPS if possible.
+Using onesix launcher.
+
+[12:05:22] [main/INFO]: Loading Minecraft 1.20.1 with Fabric Loader 0.18.4
+[12:05:22] [ForkJoinPool-1-worker-4/WARN]: The mod "dungeons_arise" contains invalid entries in its mod json:
+- Unsupported root entry "credits" at line 12 column 12
+[12:05:22] [ForkJoinPool-1-worker-3/WARN]: Mod ends_delight uses the version refabricated-1.20.1-2.5 which isn't compatible with Loader's extended semantic version format (Could not parse version number component 'refabricated'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[12:05:22] [ForkJoinPool-1-worker-1/WARN]: Mod com_github_rtyley_animated-gif-lib-for-java uses the version animated-gif-lib-1.7 which isn't compatible with Loader's extended semantic version format (Could not parse version number component 'animated'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[12:05:22] [ForkJoinPool-1-worker-12/WARN]: Mod magna uses the version ${version} which isn't compatible with Loader's extended semantic version format (Could not parse version number component '${version}'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[12:05:22] [ForkJoinPool-1-worker-5/WARN]: Mod naturalist uses the version 5.0pre3 which isn't compatible with Loader's extended semantic version format (Could not parse version number component '0pre3'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[12:05:22] [ForkJoinPool-1-worker-15/WARN]: Mod netherdepthsupgrade uses the version fabric-3.1.6-1.20 which isn't compatible with Loader's extended semantic version format (Could not parse version number component 'fabric'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[12:05:22] [ForkJoinPool-1-worker-6/WARN]: Mod oceansdelight uses the version fdrf-fabric-1.0.2-1.20 which isn't compatible with Loader's extended semantic version format (Could not parse version number component 'fdrf'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[12:05:22] [ForkJoinPool-1-worker-13/WARN]: The mod "openblocks" contains invalid entries in its mod json:
+- Unsupported root entry "client" at line 24 column 11
+[12:05:22] [ForkJoinPool-1-worker-16/WARN]: Mod com_github_jagrosh_discordipc uses the version a8d6631cc9 which isn't compatible with Loader's extended semantic version format (Could not parse version number component 'a8d6631cc9'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[12:05:22] [main/INFO]: Dependencies overridden for smoothgui, create_questing, estrogen, thermoo, prominent, bettertrims, frostiful, chatanimation, copycats
+[12:05:22] [main/WARN]: Mod resolution failed
+[12:05:22] [main/INFO]: Immediate reason: [HARD_DEP_NO_CANDIDATE betterarcheology 1.2.1-1.20.1 {depends yungsapi @ [>=1.20-Fabric-4.0.4]}, ROOT_FORCELOAD_SINGLE betterarcheology 1.2.1-1.20.1]
+[12:05:22] [main/INFO]: Reason: [HARD_DEP betterarcheology 1.2.1-1.20.1 {depends yungsapi @ [>=1.20-Fabric-4.0.4]}, HARD_DEP invoke 1.0.3.1-1.20.1 {depends wizards @ [>=0.9.23]}, HARD_DEP paxi 1.20-Fabric-4.0 {depends yungsapi @ [>=1.20-Fabric-4.0.1]}]
+[12:05:22] [main/INFO]: Fix: add [add:yungsapi 1.20-Fabric-4.0.4 ([[1.20-Fabric-4.0.4,∞)]), add:wizards 0.9.23 ([[0.9.23,∞)])], remove [], replace []
+[12:05:22] [main/ERROR]: Incompatible mods found!
+net.fabricmc.loader.impl.FormattedException: Some of your mods are incompatible with the game or each other!
+A potential solution has been determined, this may resolve your problem:
+	 - Install yungsapi, version 1.20-Fabric-4.0.4 or later.
+	 - Install wizards, version 0.9.23 or later.
+More details:
+	 - Mod 'Better Archeology' (betterarcheology) 1.2.1-1.20.1 requires version 1.20-Fabric-4.0.4 or later of yungsapi, which is missing!
+	 - Mod 'Invocations Mod' (invoke) 1.0.3.1-1.20.1 requires version 0.9.23 or later of wizards, which is missing!
+	 - Mod 'Paxi' (paxi) 1.20-Fabric-4.0 requires version 1.20-Fabric-4.0.1 or later of yungsapi, which is missing!
+	at net.fabricmc.loader.impl.FormattedException.ofLocalized(FormattedException.java:51) ~[fabric-loader-0.18.4.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:202) ~[fabric-loader-0.18.4.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:142) ~[fabric-loader-0.18.4.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:66) ~[fabric-loader-0.18.4.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.18.4.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:243) ~[?:?]
+	at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:278) ~[?:?]
+	at org.multimc.EntryPoint.listen(EntryPoint.java:143) ~[?:?]
+	at org.multimc.EntryPoint.main(EntryPoint.java:34) ~[?:?]
+Process exited with exit code 1 (0x1).
+Please note that usually neither the exit code, nor its description are enough to diagnose issues!
+Always upload the entire log and not just the exit code.
