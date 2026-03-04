@@ -102,7 +102,8 @@
                         @endforeach
                     </tbody>
                 </table>
-            {{ $history->links() }}
+        
+                <div class="p-8">{{ $history->links() }}</div>
             </div>
         </div>
     </div>
